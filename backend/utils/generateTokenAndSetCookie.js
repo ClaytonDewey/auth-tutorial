@@ -5,7 +5,7 @@ export const generateTokenAndSetCookie = (res, userId) => {
     expiresIn: '7d',
   });
 
-  res.cookei('token', token, {
+  res.cookie('token', token, {
     httpOnly: true, // cookie cannot be accessed by client side js
     secure: process.env.NODE_ENV === 'production',
     sameSite: 'strict',
