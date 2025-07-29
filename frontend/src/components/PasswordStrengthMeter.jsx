@@ -27,7 +27,7 @@ const PasswordCriteria = ({ password }) => {
   );
 };
 
-const PasswordStrengthMeter = ({ password }) => {
+export const PasswordStrengthMeter = ({ password }) => {
   const getStrength = (pass) => {
     let strength = 0;
     if (pass.length >= 6) strength++;
@@ -76,4 +76,3 @@ const PasswordStrengthMeter = ({ password }) => {
     </div>
   );
 };
-export default PasswordStrengthMeter;

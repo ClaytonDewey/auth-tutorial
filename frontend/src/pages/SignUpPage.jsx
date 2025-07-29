@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import Input from '../components/Input';
 import { Lock, Mail, User } from 'lucide-react';
-import PasswordStrengthMeter from '../components/PasswordStrengthMeter';
+import { Input, PasswordStrengthMeter } from '../components';
 
-const SignUpPage = () => {
+export const SignUpPage = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -75,4 +74,3 @@ const SignUpPage = () => {
     </motion.div>
   );
 };
-export default SignUpPage;

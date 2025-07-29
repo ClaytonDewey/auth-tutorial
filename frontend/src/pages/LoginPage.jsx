@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Mail, Lock, Loader } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import Input from '../components/Input';
+import { Input } from '../components';
 
-const LoginPage = () => {
+export const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const isLoading = false;
@@ -74,4 +74,3 @@ const LoginPage = () => {
     </motion.div>
   );
 };
-export default LoginPage;
