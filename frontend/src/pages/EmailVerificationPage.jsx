@@ -55,7 +55,7 @@ export const EmailVerificationPage = () => {
         console.error(error);
       }
     },
-    [code]
+    [code, navigate, verifyEmail]
   );
 
   // Auto submit when all fields are filled
