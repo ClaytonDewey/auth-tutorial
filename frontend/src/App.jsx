@@ -1,7 +1,13 @@
-import { Routes, Route } from 'react-router-dom';
-import FloatingShape from './components/FloatingShape';
-import SignUpPage from './pages/SignUpPage';
-import LoginPage from './pages/LoginPage';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { FloatingShape } from './components';
+import {
+  SignUpPage,
+  LoginPage,
+  ForgotPasswordPage,
+  DashboardPage,
+  EmailVerificationPage,
+  ResetPasswordPage,
+} from './pages';
 
 function App() {
   return (
@@ -14,9 +20,13 @@ function App() {
       <FloatingShape color='bg-lime-500' size='w-32 h-32' top='40%' left='-10%' delay={2} />
 
       <Routes>
-        <Route path='/' element={'Home'} />
+        <Route path='/' element={<DashboardPage />} />
         <Route path='/signup' element={<SignUpPage />} />
         <Route path='/login' element={<LoginPage />} />
+        <Route path='/verify-email' element={<EmailVerificationPage />} />
+        <Route path='/forgot-password' element={<ForgotPasswordPage />} />
+        <Route path='/reset-password/:token' element={<ResetPasswordPage />} />
+        <Route path='*' element={<Navigate to='/' replace />} />
       </Routes>
     </div>
   );
