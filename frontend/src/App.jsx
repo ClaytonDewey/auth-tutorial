@@ -8,6 +8,7 @@ import {
   EmailVerificationPage,
   ResetPasswordPage,
 } from './pages';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path='/reset-password/:token' element={<ResetPasswordPage />} />
         <Route path='*' element={<Navigate to='/' replace />} />
       </Routes>
+      <Toaster />
     </div>
   );
 }
