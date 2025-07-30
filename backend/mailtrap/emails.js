@@ -58,7 +58,7 @@ export const sendPasswordResetEmail = async (email, resetURL) => {
       from: sender,
       to: recipient,
       subject: 'Reset your password',
-      html: PASSWORD_RESET_REQUEST_TEMPLATE.replace('{resetURL}', resetURL),
+      html: PASSWORD_RESET_REQUEST_TEMPLATE.replace('${resetURL}', resetURL),
       category: 'Password Reset',
     });
   } catch (error) {
