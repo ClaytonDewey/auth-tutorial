@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import axios from 'axios';
 
 const API_URL =
-  import.meta.env.MODE === 'development'
+  process.env.MODE === 'development'
     ? 'http://localhost:8000/api/auth'
     : '/api/auth';
 
