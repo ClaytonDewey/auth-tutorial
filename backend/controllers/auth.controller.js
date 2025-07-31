@@ -12,10 +12,17 @@ import {
 
 export const signup = async (req, res) => {
   const { email, password, name } = req.body;
+  const emailDomain = email.split('@');
 
   try {
     if (!email || !password || !name) {
       throw new Error('All fields are required');
+    }
+
+    if (emailDomain[1] !== process.env.APPROVED_DOMAIN) {
+      return res
+        .status(400)
+        .json({ success: false, message: 'Email domain not allowed' });
     }
 
     const userAlreadyExists = await User.findOne({ email });
