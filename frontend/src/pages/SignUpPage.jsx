@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 import { Loader, Lock, Mail, User } from 'lucide-react';
 import { Button, Input, PasswordStrengthMeter } from '../components';
 import { useAuthStore } from '../store/authStore';
+import { toast } from 'react-hot-toast';
 
 export const SignUpPage = () => {
   const [name, setName] = useState('');
@@ -19,6 +20,7 @@ export const SignUpPage = () => {
       await signup(email, password, name);
       navigate('/verify-email');
     } catch (error) {
+      toast.error(error.response.data.message);
       console.error(error);
     }
   };
