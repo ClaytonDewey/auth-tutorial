@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Loader, Lock, Mail, User } from 'lucide-react';
-import { Input, PasswordStrengthMeter } from '../components';
+import { Button, Input, PasswordStrengthMeter } from '../components';
 import { useAuthStore } from '../store/authStore';
 
 export const SignUpPage = () => {
@@ -61,7 +61,8 @@ export const SignUpPage = () => {
           {error && <p className='text-red-500 font-semibold mt-2'>{error}</p>}
           <PasswordStrengthMeter password={password} />
 
-          <motion.button
+          <Button
+            isMotion={true}
             className='mt-5 w-full py-3 px-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white 
 						font-bold rounded-lg shadow-lg hover:from-green-600
 						hover:to-emerald-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2
@@ -75,7 +76,7 @@ export const SignUpPage = () => {
             ) : (
               'Sign Up'
             )}
-          </motion.button>
+          </Button>
         </form>
       </div>
       <div className='px-8 py-4 bg-gray-900 bg-opacity-50 flex justify-center'>

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Mail, Lock, Loader } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Input } from '../components';
+import { Input, Button } from '../components';
 import { useAuthStore } from '../store/authStore';
 
 export const LoginPage = () => {
@@ -52,7 +52,9 @@ export const LoginPage = () => {
             </Link>
           </div>
           {error && <p className='text-red-500 font-semibold mb-2'>{error}</p>}
-          <motion.button
+
+          <Button
+            isMotion={true}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className='w-full py-3 px-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold rounded-lg shadow-lg hover:from-green-600 hover:to-emerald-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition duration-200'
@@ -63,7 +65,7 @@ export const LoginPage = () => {
             ) : (
               'Login'
             )}
-          </motion.button>
+          </Button>
         </form>
       </div>
       <div className='px-8 py-4 bg-gray-900 bg-opacity-50 flex justify-center'>

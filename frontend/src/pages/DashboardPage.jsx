@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { useAuthStore } from '../store/authStore';
 import { formatDate } from '../utils/date';
+import { Button } from '../components';
 
 export const DashboardPage = () => {
   const { user, logout } = useAuthStore();
@@ -61,7 +62,8 @@ export const DashboardPage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6 }}
         className='mt-4'>
-        <motion.button
+        <Button
+          isMotion={true}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={handleLogout}
@@ -69,7 +71,7 @@ export const DashboardPage = () => {
 				font-bold rounded-lg shadow-lg hover:from-green-600 hover:to-emerald-700
 				 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900'>
           Logout
-        </motion.button>
+        </Button>
       </motion.div>
     </motion.div>
   );

@@ -1,12 +1,12 @@
 import { motion } from 'motion/react';
 
-export const Button = ({ isMotion, text, ...props }) => {
+export const Button = ({ isMotion, children, ...props }) => {
   return (
     <>
       {isMotion ? (
-        <motion.button {...props}>{text}</motion.button>
+        <motion.button {...props}>{children}</motion.button>
       ) : (
-        <button {...props}>{text}</button>
+        <button {...props}>{children}</button>
       )}
     </>
   );
